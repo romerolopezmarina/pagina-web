@@ -1,0 +1,382 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: open;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    --main-text-color: #F7F7F7;
+    --secondary-text-color: #A4A4A4;
+}
+
+.clearfix:after {
+    content:"";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+/*Imagen cabecera*/
+
+header {
+    height:360px;
+}
+
+.header > .title-img {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/fondo_1.png);
+    height: 100vh;
+    transition: background-size 0.5s;
+    opacity: 1;
+
+}
+
+
+/* Cuando pasas el cursor por encima se agranda*/
+.header > .title-img:hover{
+    background-size: 115% 115%;
+}
+
+/* Título y animación*/
+.header > .title {
+    margin: 0;
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 70px;
+    color: #000000;
+    font-family: 'EB Garamond', serif;
+    z-index: 1;
+
+    animation: titleAnimation 2s forwards;
+    /*animation-delay: 0.8s;*/
+    visibility: visible;
+}
+
+.header > .title-cite {
+    background-color: #FFFFFF;
+    margin: 0;
+    position: static;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 45px;
+    color: #000000;
+    font-family: 'EB Garamond', serif;
+    opacity: 1;
+    animation: subtitleAnimation 3s forwards;
+    animation-delay: 1s;
+}
+/* Barra de navegación*/
+.navbar {
+    background-color: var(--main-text-color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+/* Padre > Hijo*/
+/*Elementos dentro de las barras de navegación (navbar-list)*/
+.navbar > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: right;
+    font-size: 0;
+}
+/*cada elemento de la barra de navegación de manera singular*/
+.navbar > .navbar-list > .navbar-item {
+    display: inline;
+    font-size: 16px;
+}
+
+.navbar > .navbar-list > .navbar-item a {
+    padding: 20px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
+    display: inline-block;
+    transition: all 0.5s linear;
+}
+
+.navbar > .navbar-list > .navbar-item.active a{
+    color: var(--main-text-color);
+    background-color: lightgreen;
+}
+
+.navbar > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+/* Section container tiene el vçideo y la descripción de quien es Batman*/
+.section-container > .diseño-video {
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
+
+
+/* Sobre mi diseño*/
+
+#sobre-mi {
+    margin: 0;
+    padding-top:250px;
+    background-color: rgba(206, 206, 206, 0.22);
+
+}
+
+.about-me > .diseño-video {
+    padding-left: 100px;
+    float: left;
+    max-width: 80%;
+    padding-top: 150px;
+}
+
+.about-me > .marina-info {
+    padding-right: 100px;
+    color:   #000000;
+    padding-top: 100px;
+    float: right;
+    max-width: 50%;
+
+}
+
+.title-soy {
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 
+}
+.title-strong {
+    font-size: 20px;
+    font-family: 'EB Garamond', serif;
+    color: black;
+}
+
+.title-marina {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+}
+/*DOSSIER*/
+ #dossier {
+     padding-top: 60px;
+     background-color:  rgba(206, 206, 206, 0.22):
+     ;
+     background-repeat: no-repeat;
+     background-position: center center;
+ }
+
+ .ensamblaje{
+     padding-left: 20px;
+ }
+.title-dossier {
+    font-family: 'EB Garamond', serif;
+    color: black;
+}
+ .titulo-photo {
+     padding-top: 5px;
+     padding-left: 20px;
+     margin: 0;
+    background-color: white;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 26px;
+    color: #000000;
+ }
+
+ .photo-name {
+    padding-top: 0px;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: white;
+    font-size: 8px;
+ }
+
+ .position {
+    padding-left: 20px;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: #000000;
+    background-color:  white;
+    margin: 0;
+    font-size: 8px;
+ }
+
+/* Foto de cada miembro del equipo*/
+
+
+
+.team-member-photo img {
+    height: 300px;
+    max-width: 100%;
+    border-radius: 0%;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.bio {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    margin: 0;
+    font-family: 'EB Garamond', serif;
+    color: black;
+}
+
+.photo-system img {
+    background-size: 100% 100%;
+}
+
+/* Efecto que hace girar las fotos en superposición*/
+.flip {
+    height: 305px;
+    position: relative;
+}
+
+.flip-img {
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.back {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.flip:hover .front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.flip:hover .back {
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+}
+
+/*ESTUDIOS*/
+.title-estudios {
+    font-family: 'Bangers', cursive;
+    color: black;
+    font-size: 45px;
+}
+
+.title-estudio {
+    font-family: 'Slabo 27px', serif;
+    height: 30px;
+    width: 1200px;
+    
+}
+#estudios {
+    padding-top: 100px;
+    padding-left: 20px;
+
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.title-estudio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+.estudio-name {
+    margin: 0;
+    height: 50px;
+}
+
+.estudio-photo img {
+    margin-top: 30px;
+    width: 300px;
+    height: 300px;
+    background-size: 50% 50%;
+}
+
+.photo-name {
+    padding-top: 50px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*A partir de aquí es contacto.html*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead > tr {
+    background-color: #F5F5F5;
+}
+
+th {
+    height: 50px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody > tr:hover {
+    background-color:#dedddd;
+}
+
+#googleMap {
+    height: 400px;
+}
+
+.form {
+    padding: 0 30px;
+}
+
+.form .form-row {
+    padding: 15px;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[disabled] {
+    opacity: 0.5;
+}
+
+input[type=button], input[type=submit], button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.row-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.section-container {
+    padding-top: 10px
+}

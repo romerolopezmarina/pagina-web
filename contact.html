@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/grid.css">
+    <link rel="stylesheet" type="text/css" href="./styles/encargos.css">
+<!-- Script para que salga el mapa de google-->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA-jpiiZm0kg4wbYwPvUtNZvyLbiNcz6p8"></script>
+    
+    <script>
+        function initialize() {
+            var myLatLng = {lat: 42.762480, lng: -83.283406};
+
+              var mapProp = {
+                center:myLatLng,
+                zoom:15,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+              };
+              var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+              var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Aqui estamos'
+              });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+<!-- En cada html que se encarga de una sección hay que indicar el navbar item para que nos conduzca a la sección-->
+<!-- En este casp en contacto-->
+</head>
+<body>
+        <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#sobre-mi">Sobre mí</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="dossier.html">Dossier de Obra</a>
+                    </li>
+                    </li>
+                    <li class="navbar-item active">
+                        <a href="contact.html">Contacto</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="encargos.html">Encargos</a>
+                    </li>
+                </ul>
+            </nav>
+
+    <main class="container">
+        <section class="contact section-container">
+            <h2>Contacta con nosotros</h2>
+            <div class="row">
+
+                <div class="col-6">
+                    <div id="googleMap"></div>    
+                </div>
+
+                <div class="col-6">
+                    <div class="form">
+                        <form name="contacto" method="get">
+                            <div class="form-row">
+                                <!--nombre y apellido-->
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-row">
+                                <!--email-->
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="name@company.com" 
+                                pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
+                                
+                            </div>
+                            <div class="form-row">
+                                <!--opciones - radio-->
+                                <div>¿Cómo me has conocido?</div>
+                                <label for="tipo_mision_1">Facebook</label>
+                                <input type="radio" id="tipo_mision_1" name="tipo_mision" value="Facebook" required>
+
+                                <label for="tipo_mision_2">Página Web</label>
+                                <input type="radio" id="tipo_mision_2" name="tipo_mision" value="Página Web" required>
+
+                                <label for="tipo_mision_3">Revistas</label>
+                                <input type="radio" id="tipo_mision_3" name="tipo_mision" value="Revistas" required>
+                            </div>
+                            <div class="form-row">
+                                <!--número-->
+                                <label for="numero">Número de contacto:</label>
+                                <input type="number" id="ejercito" name="numero" min="1" required>
+                            </div>
+                            <div class="form-row">
+                                    <!--fecha-->
+                                    <label for="fecha">Fecha del trabajo:</label>
+                                    <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                            <div class="form-row">
+                                <!--botón enviar-->
+                                <!-- Para poder meter cosas ahí dentro no puede ser 
+                                    input. Tiene que ser button-->
+                                    <button type="submit" id="enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Tipo de servicio</th> 
+                       <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Presupuesto</td>
+                        <td>1 €</td>
+                    </tr>
+                    <tr>
+                        <td>Diseño Simple</td>
+                        <td>100 €</td>
+                    </tr>
+                    <tr>
+                        <td>Logotipo y Packaging</td>
+                        <td>600 €</td>
+                    </tr>
+                    <tr>
+                        <td>Imagen corporativa</td>
+                        <td>1000 €</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
